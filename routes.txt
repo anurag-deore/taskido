@@ -1,0 +1,52 @@
+/login                              - GET       - login user
+/register                           - POST      - register new user
+
+@-Protected routes below
+
+/verify                             - GET       - verify a token   
+
+/users                              - GET       - get all users
+/user/<id>                          - GET       - get specific user
+/user_update/<id>                   - PUT       - update specific user
+/user_delete/<id>                   - DELETE    - delete specific user                
+
+/todos                              - GET       - get all todos in a list
+/todo/add                           - POST      - add new todo to a list
+/todo/<id>                          - GET       - get specific todo within a list
+/todo_update/<id>                   - POST      - update specific todo within a list
+/todo_delete/<id>                   - DELETE    - delete specific todo within a list
+
+
+date
+deadline
+label
+task desc.
+priority
+
+
+[
+    {
+date:ashajsah,
+deadline:ashajsah,
+label:ashajsah,
+task desc.:ashajsah,
+priority   :ashajsah,
+    },
+    
+date:ashajsah,
+deadline:ashajsah,
+label:ashajsah,
+task desc.:ashajsah,
+priority   :ashajsah,
+    },
+]
+
+db.users.update( {"_id": ObjectId("5eda68f55e020fae87c35f72")}, 
+{ $push:
+    { todos:
+        {   "title":"new tasks 2", 
+            "date":"12-03-2000", 
+            "label":"education" 
+        } 
+    }
+})
