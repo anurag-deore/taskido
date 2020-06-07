@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 from flask_pymongo import PyMongo
 from bson.json_util import dumps
 from bson.objectid import ObjectId
@@ -19,7 +19,7 @@ app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False;
 
 @app.route('/')
 def index():
-    return "Welcome to Taskido"
+    return render_template('index.html')
 
 
 @app.route('/register', methods=['POST'])
