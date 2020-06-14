@@ -11,7 +11,7 @@ app = Flask(__name__)
 cors =CORS(app, resources={r"*": {"origins": "*"}})
 app.secret_key = "security"
 
-app.config["MONGO_URI"] = "mongodb+srv://Anurag:Deore@todo-637wb.gcp.mongodb.net/test"
+app.config["MONGO_URI"] = "mongodb+srv://username:password@xyz.mongodb.net/test"
 
 mongo = PyMongo(app)
 jwt = JWTManager(app)
@@ -239,24 +239,6 @@ def todo_delete_completely(id,tid):
         return dumps(todos['todos']), 200
     else:
         return "Todo not found. Cannot Delete", 404
-
-
-
-
-# @app.route('/user/add  ', methods=['POST'])
-# def add():
-#     if request.is_json:
-#         name = request.json['name']
-#         email = request.json['email']
-#         pwd = request.json['password']
-
-#     return jsonify({'name':email,'password':pwd})
-    # if name and email and pwd and request.method == 'POST':
-    #     _hashed_password = generate_password_hash(pwd)
-    #     id = mongo.db.users.insert({'name':name,'email':email,'password':_hashed_password})
-    #     return jsonify('User added Successfully'), 200
-    # return jsonify('Error inserting data')
-
 
 if __name__ == "__main__":
     app.run(debug=True)
